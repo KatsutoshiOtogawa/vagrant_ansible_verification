@@ -15,22 +15,6 @@ Vagrant.configure("2") do |config|
     # boxes at https://vagrantcloud.com/search.
     client_pc.vm.box = "generic/fedora31"
 
-    # If you want to different config,you need to write config each client PC 
-    client_pc.vm.define :client1 do | client1 |
-       client1.vm.network "private_network", ip: "10.0.2.11"
-       client1.vm.hostname = "client1"
-    end
-
-    client_pc.vm.define :client2 do | client2 |
-       client2.vm.network "private_network", ip: "10.0.2.12"
-       client2.vm.hostname = "client2"
-    end
-
-    client_pc.vm.define :client3 do | client3 |
-       client3.vm.network "private_network", ip: "10.0.2.13"
-       client3.vm.hostname = "client3"
-    end
-
     # Disable automatic box update checking. If you disable this, then
     # boxes will only be checked for updates when the user runs
     # `vagrant box outdated`. This is not recommended.
@@ -50,11 +34,14 @@ Vagrant.configure("2") do |config|
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
     # client_pc.vm.network "private_network", ip: "192.168.33.10"
+    client_pc.vm.network "private_network", ip: "10.0.2.11"
 
     # Create a public network, which generally matched to bridged network.
     # Bridged networks make the machine appear as another physical device on
     # your network.
     # client_pc.vm.network "public_network"
+
+    client_pc.vm.hostname = "clientpc"
 
     # Share an additional folder to the guest VM. The first argument is
     # the path on the host to the actual folder. The second argument is
@@ -109,6 +96,7 @@ Vagrant.configure("2") do |config|
     # Create a private network, which allows host-only access to the machine
     # using a specific IP.
     # ansible_server.vm.network "private_network", ip: "192.168.33.10"
+    ansible_server.vm.network "private_network", ip: "10.0.2.111"
 
     # Create a public network, which generally matched to bridged network.
     # Bridged networks make the machine appear as another physical device on
