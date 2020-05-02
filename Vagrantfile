@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :client_pc do | client_pc |
     # Every Vagrant development environment requires a box. You can search for
     # boxes at https://vagrantcloud.com/search.
-    client_pc.vm.box = ""generic/fedora31"
+    client_pc.vm.box = "generic/fedora31"
 
     # If you want to different config,you need to write config each client PC 
     client_pc.vm.define :client1 do | client1 |
