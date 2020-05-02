@@ -88,7 +88,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :ansible_server do | ansible_server |
     # Every Vagrant development environment requires a box. You can search for
     # boxes at https://vagrantcloud.com/search.
-    ansible_server.vm.box = ""generic/fedora31"
+    ansible_server.vm.box = "generic/fedora31"
 
     # Disable automatic box update checking. If you disable this, then
     # boxes will only be checked for updates when the user runs
